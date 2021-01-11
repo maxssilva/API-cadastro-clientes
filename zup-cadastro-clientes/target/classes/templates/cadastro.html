@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faça o seu cadastro</title>
+</head>
+<body style="background-color: orange;">
+<h1 align="center">Faça o seu cadastro</h1>
+
+<form th:action="@{/users}" th:object="${users}" method="post" align="center">
+    <div>
+        <label th:for="name">Nome:</label>
+        <input type="text" th:field="*{name}" placeholder="Seu Nome" required="required">
+    </div>
+
+    <div>
+        <label th:for="birthDate">Data de nascimento:</label>
+        <input type="date" th:field="*{birthDate}" required="required">
+    </div>
+
+    <div>
+        <label th:for="eMail">E-mail:</label>
+        <input type="text" th:field="*{eMail}" placeholder="endereço de e-mail" required="required">
+    </div>
+
+    <div>
+        <label th:for="cpf">CPF:</label>
+        <input type="text" th:field="*{cpf}" placeholder="cpf" required="required">
+    </div>
+
+
+    <div>
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+</body>
+</html>
